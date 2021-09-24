@@ -3,13 +3,15 @@ import os
 import sys
 import hashlib
 import mysql.connector
+import databaseInfo as info
 import time
 
 mydb = mysql.connector.connect(
-    host="127.0.0.1",
-    user="timanttikuutio",
-    password="Falcon5547#",
-    database="logintest"
+    host=info.host,
+    user=info.user,
+    password=info.password,
+    database="logintest",
+    auth_plugin='mysql_native_password'
 )
 mycursor = mydb.cursor(buffered=True)
 
