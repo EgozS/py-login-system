@@ -7,6 +7,7 @@ mydb = mysql.connector.connect(
     host=info.host,
     user=info.user,
     password=info.password,
+    auth_plugin='mysql_native_password'
 )
 
 mycursor = mydb.cursor(buffered=True)
